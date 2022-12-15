@@ -57,6 +57,7 @@ public class InputManager : MonoBehaviour
         if (rightGunShootInput)
         {
             rightGunShootInput = false;
+            Debug.Log("Right gun was shot");
             _playerAction.ProcessAction();
         }
     }

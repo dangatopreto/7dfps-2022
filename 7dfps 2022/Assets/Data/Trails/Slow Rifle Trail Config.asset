@@ -12,14 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fa4c34d3336034c9dd64b20b25ecfe, type: 3}
   m_Name: Slow Rifle Trail Config
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 3190a1217f5192140b6d54e198124854, type: 2}
   widthCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.05
+      inSlope: 0.008119172
+      outSlope: 0.008119172
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.325
+    - serializedVersion: 3
+      time: 1.0014119
+      value: 0.01
+      inSlope: -0.0867027
+      outSlope: -0.0867027
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16552648
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  duration: 0.5
+  duration: 0.2
   minVertexDistance: 0.1
   color:
     serializedVersion: 2
@@ -50,5 +68,5 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  missDistance: 100
-  simulationSpeed: 100
+  missDistance: 50
+  simulationSpeed: 50
