@@ -10,6 +10,9 @@ public class InputManager : MonoBehaviour
 
     private PlayerMovement _playerMovement;
     private PlayerCamera _playerCamera;
+    private PlayerAction _playerAction;
+
+    public bool rightGunShootInput { get; private set; }
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +21,12 @@ public class InputManager : MonoBehaviour
         _playerActions = _playerInput.Player;
         _playerMovement = GetComponent<PlayerMovement>();
         _playerCamera = GetComponent<PlayerCamera>();
+        _playerAction = GetComponent<PlayerAction>();
+    }
+
+    private void Update()
+    {
+        HandleRightGunShootInput();
     }
 
     private void FixedUpdate()
@@ -33,11 +42,22 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
+        _playerActions.RightGunShoot.performed += i => rightGunShootInput = true;
+
         _playerActions.Enable();
     }
 
     private void OnDisable()
     {
         _playerActions.Disable();
+    }
+
+    private void HandleRightGunShootInput()
+    {
+        if (rightGunShootInput)
+        {
+            rightGunShootInput = false;
+            _playerAction.ProcessAction();
+        }
     }
 }
